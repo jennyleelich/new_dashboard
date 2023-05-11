@@ -1,0 +1,7 @@
+
+    <ul class="nav nav-tabs justify-content-center">
+      <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/spring/dashboard" data-toggle="tab">Spring Dashboard</a></li>
+      <li *ngIf="appService.showSpringDetails" routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/spring/details" data-toggle="tab">Spring Details</a></li>
+    </ul>
+
+

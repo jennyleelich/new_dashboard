@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>
+      Case Study
+    </h1>
+    <h4>
+    "In this case shows two different way to communicate between sibling components.
+    First, we could base parent component, through parent, childA component emit event reach childB component;
+    Second way,using service to share function and variable"
+    </h4>
+  </div>
+</div>
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 hidden-sm hidden-xs">
+        <!-- <app-left-side (loadingRight)="loadingSideBar($event)"></app-left-side> -->
+        <app-left-side></app-left-side>
+      </div>
+      <div class="col-md-9">
+        <!-- <app-right-side-first *ngIf="sideBarNum === 'first'"></app-right-side-first>
+        <app-right-side-second *ngIf="sideBarNum === 'second'"></app-right-side-second> -->
+        <app-right-side-first *ngIf="appService.sideBarNum === 'first'"></app-right-side-first>
+        <app-right-side-second *ngIf="appService.sideBarNum === 'second'"></app-right-side-second>
+      </div>
+    </div>
+  </div>
+</div>

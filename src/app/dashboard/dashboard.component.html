@@ -1,0 +1,71 @@
+<p-tabView (onClose)="appService.handleClose($event)" (onChange)="appService.handleChange($event)">
+  <p-tabPanel header="Activies Dashboard" [selected]="appService.selectedIndex==0">
+    <div class="row panel-body">
+        <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+               <span>Spring Festival</span>
+            </div>
+            <div class="panel-body">
+              <div class="text-center">
+                <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+              <span>Spring Activity</span>
+           </div>
+           <div class="panel-body">
+             <div class="text-center">
+               <p-chart type="pie" [data]=pieData [options]="pieOptions"></p-chart>
+             </div>
+           </div>
+         </div>
+        </div>
+       </div>
+       <div class="panel-body">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <span> Activity Details</span>
+           </div>
+           <div class="panel-body">
+             <div class="col-md-12 padding-left-0 padding-right-0">
+               <p-table [value]="details" [paginator]="true" [rows]="8" [rowsPerPageOptions]="[8,10,20]"
+               [responsive]=true  scrollHeight="300px" sortMode="multiple">
+               <ng-template pTemplate="header">
+                  <tr>
+                      <th>Event Id</th>
+                      <th>Event Date</th>
+                      <th>Event Place</th>
+                      <th>Event Details</th>
+                      <th>Event For Who</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data>
+                  <tr>
+                    <td><button type="button" class="btn btn-link" title="{{data.id}}" (click)="appService.addingCase(data)" >{{data.id}}</button></td>
+                    <td><span title="{{data.date}}">{{data.date}}</span></td>
+                    <td><span title="{{data.place}}">{{data.place}}</span></td>
+                    <td><span title="{{data.details}}">{{data.details}}</span></td>
+                    <td> <span title="{{data.forWho}}">{{data.forWho}}</span></td>
+                
+                    
+                  </tr>
+              </ng-template>
+                  
+                   
+               </p-table>
+             </div>
+           </div>
+         </div>
+       </div>
+
+  </p-tabPanel>
+  <p-tabPanel *ngFor="let case of appService.cases; let i = index" header="case id {{case.id}}" [closable]="true"
+  [selected]="i==appService.selectedCaseIndex">
+      <app-spring-details [data]="case"></app-spring-details>
+  </p-tabPanel>
+</p-tabView>
