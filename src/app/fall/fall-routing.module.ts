@@ -9,3 +9,7 @@ const routes: Routes = [{ path: '', component: FallComponent }];
   exports: [RouterModule]
 })
 export class FallRoutingModule { }
+/**
+ * https://angular.io/guide/lazy-loading-ngmodules
+ * ng generate module fall --route fall --module app.module
+ */
