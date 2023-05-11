@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { FallRoutingModule } from './fall-routing.module';
 import { FallComponent } from './fall.component';
 
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AccordionModule } from 'primeng/accordion';
-import { TableModule } from 'primeng/table';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AccordionModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TableModule
-  ],
   declarations: [
     FallComponent
   ],
-  providers: [ ]
+  imports: [
+    CommonModule,
+    FallRoutingModule
+  ]
 })
 export class FallModule { }

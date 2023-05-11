@@ -8,6 +8,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { DropdownModule } from 'primeng/dropdown';
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { TabViewModule } from 'primeng/tabview';
     DropdownModule,
     ChartModule,
     TabViewModule,
-    SharedModule
+    SharedModule,
+    DashboardRoutingModule
   ],
   declarations: [
     DashboardComponent,

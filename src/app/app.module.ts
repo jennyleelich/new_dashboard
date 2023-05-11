@@ -13,7 +13,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SummerModule } from './summer/summer.module';
-import { FallModule } from './fall/fall.module';
 import { WinterModule } from './winter/winter.module';
 
 
@@ -31,7 +30,6 @@ import { WinterModule } from './winter/winter.module';
     DashboardModule,
     SpringModule,
     SummerModule,
-    FallModule,
     WinterModule
  
    

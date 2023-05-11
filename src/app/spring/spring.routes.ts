@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 
 const SPRING_ROUTES: Routes = [
   {
-    path: 'spring',
+    path: '',
     component: SpringComponent,
     children: [
       { path: 'dashboard', component: SpringDashboardComponent},

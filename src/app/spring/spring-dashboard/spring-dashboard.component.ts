@@ -56,7 +56,7 @@ details: any;
         display: false
       },
       responsive: false,
-      maintainAspectRatio: false
+      maintainAspectRatio: true
     };
     this.pieData = {
       labels: ['Boy', 'Girl', 'Family', 'Other'],
