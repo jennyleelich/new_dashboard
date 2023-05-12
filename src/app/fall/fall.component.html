@@ -34,7 +34,7 @@
             <p-accordionTab header="Country Level Assessment" [selected]="true">
                 <div class="panel-body">
                   <div class="col-md-12 padding-left-0 padding-right-0">
-                    <p-table [value]="sampleForm?.value.countryLevelAssessment.teamAssessment" [paginator]="false" [rows]="8"
+                    <p-table [value]="sampleForm.value.countryLevelAssessment.teamAssessment" [paginator]="false" [rows]="8"
                       [rowsPerPageOptions]="[8,10,20]" [responsive]=true scrollHeight="300px" sortMode="multiple">
                       <p-header>Team Assessment</p-header>
                       <ng-template pTemplate="header">
@@ -61,7 +61,7 @@
                 </div>
                 <div class="panel-body">
                   <div class="col-md-12 padding-left-0 padding-right-0">
-                    <p-table [value]="sampleForm?.value.countryLevelAssessment.personalAssessment" [paginator]="false"
+                    <p-table [value]="sampleForm.value.countryLevelAssessment.personalAssessment" [paginator]="false"
                       [rows]="8" [rowsPerPageOptions]="[8,10,20]" [responsive]=true scrollHeight="300px" sortMode="multiple">
                       <p-header>Personal Assessment</p-header>
                       <ng-template pTemplate="header">
