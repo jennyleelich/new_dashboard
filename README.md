@@ -49,5 +49,5 @@
           { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
         ] ;}]
             
-        in the sprint.component.html, make sure include  <router-outlet></router-outlet>
+        in the spring.component.html, make sure include  <router-outlet></router-outlet>
 
