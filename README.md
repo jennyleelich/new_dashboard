@@ -1,5 +1,5 @@
 # Angular 16 Nested Lazy routing and Nested Form build Demo 
-# visit website: http://angular16-new-dashboard.s3-website.us-east-2.amazonaws.com
+# visit website: https://d6cddmd5dgtdy.cloudfront.net
 
 (1) App structure.
 
