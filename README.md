@@ -25,7 +25,7 @@
                         |-summer component ------- ----Includes container of the sub components
                   \-winter module  ------------------- Includes about page.
              
-   
+   *. in AppModule don't import Lazy load module, very important!!
 (2) About the Router structure of dashboard application.
    
     a) const APP_ROUTES: Routes = [
