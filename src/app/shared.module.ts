@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SpringDetailsComponent } from './spring/spring-details/spring-details.component';
-
-import { DialogModule } from 'primeng/dialog';
-import { TableModule } from 'primeng/table';
 import { AccordionModule } from 'primeng/accordion';
-import { DropdownModule } from 'primeng/dropdown';
-import { ChartModule } from 'primeng/chart';
+/**
+ * as springdetailcomponent is shared component, 
+ * thus this component belong to shared module, 
+ * shared module has the responsibility to include the AccordionModule
+ */
 
 @NgModule({
   declarations: [
@@ -16,15 +16,14 @@ import { ChartModule } from 'primeng/chart';
   ],
   imports: [
     CommonModule,
-    DialogModule,
-    TableModule,
-    AccordionModule,
-    DropdownModule,
-    ChartModule,
+    AccordionModule
+   
    
   ],
   exports: [
-    SpringDetailsComponent
+    SpringDetailsComponent,
+    
+    
   ]
 
 })

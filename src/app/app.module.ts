@@ -6,16 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
-import { SpringModule } from './spring/spring.module';
-import { SharedModule } from 'primeng/api';
-import { FormsModule } from '@angular/forms';
-import { DashboardModule } from './dashboard/dashboard.module';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SummerModule } from './summer/summer.module';
-import { WinterModule } from './winter/winter.module';
 
-
+/**
+ * be careful for lazy load module, 
+ * no need to import module in app module, 
+ * what we need to do is import appRouting module, 
+ * that is enought
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +23,7 @@ import { WinterModule } from './winter/winter.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    DashboardModule,
-    SpringModule,
-    SummerModule,
-    WinterModule
- 
+    HttpClientModule
    
   ],
   providers: [AppService],

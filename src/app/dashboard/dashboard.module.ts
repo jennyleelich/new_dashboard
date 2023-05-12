@@ -13,7 +13,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-   
     DialogModule,
     TableModule,
     AccordionModule,
