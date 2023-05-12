@@ -20,7 +20,7 @@ export class AppService {
     return this.http.get('assets/json/spring-details.json');
   }
   getSampleFormData() {
-    return this.http.get('assets/json/sampleData.json');
+    return this.http.get<responseDataModle>('assets/json/sampleData.json');
   }
   addingCase(data: any) {
     let k = 1;
@@ -64,4 +64,13 @@ export class AppService {
       this.selectedCaseIndex = event.index - 1;
     }
   }
+}
+
+interface responseDataModle {
+  countryLevelAssessment: any,
+  id: any,
+  status: any,
+  name: any,
+  generalInformation: any,
+
 }
