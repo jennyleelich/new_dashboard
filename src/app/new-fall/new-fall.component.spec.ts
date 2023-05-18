@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FallComponent } from './fall.component';
+import { NewFallComponent } from './new-fall.component';
 
-describe('FallComponent', () => {
-  let component: FallComponent;
-  let fixture: ComponentFixture<FallComponent>;
+describe('NewFallComponent', () => {
+  let component: NewFallComponent;
+  let fixture: ComponentFixture<NewFallComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FallComponent]
+      imports: [NewFallComponent]
     });
-    fixture = TestBed.createComponent(FallComponent);
+    fixture = TestBed.createComponent(NewFallComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

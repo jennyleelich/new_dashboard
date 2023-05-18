@@ -1,13 +1,24 @@
-
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AccordionModule } from 'primeng/accordion';
+import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 import { AppService } from '../app.service';
+
+
 @Component({
-  selector: 'app-fall',
-  templateUrl: './fall.component.html',
-  styleUrls: ['./fall.component.css']
+  selector: 'app-new-fall',
+  standalone: true,
+  imports: [
+    CommonModule,
+    AccordionModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TableModule],
+  templateUrl: './new-fall.component.html',
+  styleUrls: ['./new-fall.component.css']
 })
-export class FallComponent implements OnInit {
+export class NewFallComponent {
   sampleForm: FormGroup | undefined;
   constructor(private fb: FormBuilder, private appService: AppService) { }
 

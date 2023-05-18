@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WinterComponent } from './winter/winter.component';
 
 
 const APP_ROUTES: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'spring', loadChildren: () => import('./spring/spring.module').then(m => m.SpringModule) },
-  { path: 'fall', loadChildren: () => import('./fall/fall.module').then(m => m.FallModule) },
   { path: 'summer', loadChildren: () => import('./summer/summer.module').then(m => m.SummerModule) },
-  { path: 'winter', component: WinterComponent },
+  { path: 'fall', loadComponent: () => import('./new-fall/new-fall.component').then(mod => mod.NewFallComponent)},
+  { path: 'winter', loadComponent: () => import('./new-winter/new-winter.component').then(mod => mod.NewWinterComponent)},
   { path: '***', redirectTo: '', pathMatch: 'full' },
 ];
 
