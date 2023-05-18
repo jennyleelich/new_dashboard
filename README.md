@@ -1,5 +1,6 @@
-# Angular 16 Nested Lazy routing and Nested Form build Demo 
-# visit website: https://d6cddmd5dgtdy.cloudfront.net
+# Angular 16 Standalone Component, Nested routing(including Lazy load modules and Lazy load standalone components) and Nested Form build Demo 
+# visit website: https://dq5xwix87sylo.cloudfront.net
+
 
 (1) App structure.
 
@@ -17,15 +18,15 @@
                        \-spring-tab component -------- Includes open new tab structure,only open two tabs 
                        |-spring component
                        |-spring.routes.ts ---- --------Includes children route
-                  \-fall module ---------------------- Includes create nested form structure and how to populate form data
+                  \-fall standalone componnet ------   Includes create nested form structure and how to populate form data
                   \-summer module -------------------- Includes communicating between components different methods demo
                         \-left-side component ---------Includes right side switch menu
                         \-right-side-first component --Includes first right side component
                         \-right-side-second component--Includes second right side component
                         |-summer component ------- ----Includes container of the sub components
-                  \-winter module  ------------------- Includes about page.
+                  \-winter standalone component  ------Includes about page.
              
-   *. in AppModule don't import Lazy load module, very important!!
+   *. in AppModule don't import Lazy load module or Lazy load standalone component, very important!!
    
 (2) About the Router structure of dashboard application.
    
@@ -33,9 +34,9 @@
         { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
         { path: 'spring', loadChildren: () => import('./spring/spring.module').then(m => m.SpringModule) },
-        { path: 'fall', loadChildren: () => import('./fall/fall.module').then(m => m.FallModule) },
         { path: 'summer', loadChildren: () => import('./summer/summer.module').then(m => m.SummerModule) },
-        { path: 'winter', component: WinterComponent },
+        { path: 'fall', loadComponent: () => import('./new-fall/new-fall.component').then(mod => mod.NewFallComponent)},
+        { path: 'winter', loadComponent: () => import('./new-winter/new-winter.component').then(mod => mod.NewWinterComponent)},
         { path: '***', redirectTo: '', pathMatch: 'full' },
         ];
     
@@ -48,5 +49,5 @@
           { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
         ] ;}]
             
-        in the sprint.component.html, make sure include  <router-outlet></router-outlet>
+        in the spring.component.html, make sure include  <router-outlet></router-outlet>
 
